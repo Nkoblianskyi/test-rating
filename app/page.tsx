@@ -62,7 +62,7 @@ export default function HomePage() {
             {/* Main Content */}
             <div className="lg:col-span-3">
               <div id="rankings" className="space-y-6">
-                <h2 className="text-3xl font-bold text-[#003B2F] mb-8">Top Irish Betting Sites Rankings 2025</h2>
+                {/* <h2 className="text-3xl font-bold text-[#003B2F] mb-8">Top Irish Betting Sites Rankings 2025</h2> */}
                 {renderRankingsList()}
               </div>
             </div>
