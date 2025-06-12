@@ -2,7 +2,7 @@ export const bettingSites = [
   {
     id: 1,
     name: "BetVictor",
-    logo: "/placeholder.svg?height=60&width=120&text=BetVictor",
+    logo: "/betvictor.png",
     rating: 4.9,
     claimed: 29891,
     bonus: "Bet €10 → Get €30 in Free Bets",
@@ -13,7 +13,7 @@ export const bettingSites = [
   {
     id: 2,
     name: "BoyleSports",
-    logo: "/placeholder.svg?height=60&width=120&text=BoyleSports",
+    logo: "/boyle.png",
     rating: 4.9,
     claimed: 29105,
     bonus: "Bet €10 Get €30 + €10 Casino Bonus",

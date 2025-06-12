@@ -49,7 +49,7 @@ export default function HomePage() {
       <div
         className="py-6 bg-cover bg-center bg-fixed"
         style={{
-          backgroundImage: "url('/placeholder.svg?height=1200&width=1920&text=Stadium+Background')",
+          backgroundImage: "url('/bg.jpg')",
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-opacity-95 py-8 rounded-lg shadow-lg bg-transparent">
