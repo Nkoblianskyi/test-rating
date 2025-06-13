@@ -8,7 +8,7 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-center items-center">
           {/* Centered Logo and Name */}
-          <a href="#" className="flex items-center space-x-3">
+          <a href="/" className="flex items-center space-x-3">
             <div className="w-12 h-12  flex items-center justify-center">
               <Image src="/logo.png" alt="Logo" width={32} height={32}  />
             </div>

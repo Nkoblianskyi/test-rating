@@ -6,59 +6,105 @@ export function TopRecommendationBlock() {
 
   return (
     <a href={firstSite.url} target="_blank" rel="noopener noreferrer" className="block">
-      <div className="relative my-8 hover:scale-105 transition-transform duration-300">
-        {/* Background Image */}
-        <div
-          className="relative bg-cover bg-center rounded-lg overflow-hidden"
-          style={{
-            backgroundImage: "url('/bg-2.jpg')",
-            minHeight: "200px",
-          }}
-        >
-          {/* Dark overlay */}
-          <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+      <div className="relative my-4 hover:scale-105 transition-transform duration-300">
+        {/* Background */}
+        <div className="relative bg-gray-600 rounded-lg overflow-hidden border-2 border-dashed border-white">
+          <div className="p-4">
+            {/* Mobile Layout */}
+            <div className="md:hidden">
+              {/* Logo at top */}
+              <div className="flex justify-center mb-3">
+                <div className="bg-white p-2 rounded-lg">
+                  <Image
+                    src={firstSite.logo || "/placeholder.svg"}
+                    alt={firstSite.siteName}
+                    width={120}
+                    height={60}
+                    className="object-contain"
+                  />
+                </div>
+              </div>
 
-          {/* Dashed border */}
-          <div className="absolute inset-4 border-2 border-dashed border-white rounded-lg"></div>
-
-          {/* Special Offer Badge */}
-          <div className="absolute left-0 top-1/2 transform -translate-y-1/2">
-            <div className="bg-blue-600 text-white px-3 py-8 text-sm font-bold writing-mode-vertical">
-              Special Offer
-            </div>
-          </div>
-
-          {/* Content */}
-          <div className="relative z-10 flex items-center justify-between h-full p-8">
-            <div className="flex-1 text-center">
-              {/* Site name with enhanced styling */}
-              <div className="inline-block bg-black bg-opacity-50 border border-white rounded-lg px-3 py-1 mb-3">
+              {/* Site name */}
+              <div className="text-center mb-3">
                 <div className="text-white text-xl font-bold">{firstSite.siteName}</div>
               </div>
-              <br />
-              {/* Bonus with enhanced styling */}
-              <div className="inline-block bg-blue-600 rounded-lg px-4 py-2 mb-4 border-2 border-white">
-                <div className="text-white text-2xl font-bold">{firstSite.bonus}</div>
+
+              {/* Bonus */}
+              <div className="bg-blue-600 text-white p-3 rounded-lg mb-3 text-center">
+                <div className="text-lg font-bold">{firstSite.bonus}</div>
               </div>
-              <br />
-              <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition-colors duration-300">
-                {firstSite.cta}
-              </button>
-              <div className="text-xs text-gray-300 mt-4 max-w-md mx-auto">{firstSite.disclaimer}</div>
+
+              {/* CTA Button */}
+              <div className="flex justify-center mb-2">
+                <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg flex items-center space-x-2">
+                  <span>➤</span>
+                  <span>Claim Bonus</span>
+                </button>
+              </div>
+
+              {/* Disclaimer */}
+              <div className="text-xs text-white text-center">{firstSite.disclaimer}</div>
+
+              {/* Indicator dots */}
+              <div className="flex justify-center mt-3">
+                {[...Array(5)].map((_, i) => (
+                  <div key={i} className="w-2 h-2 rounded-full bg-green-500 mx-0.5"></div>
+                ))}
+              </div>
             </div>
 
-            {/* Right side branding */}
-            <div className="text-right">
-              <div className="bg-white p-4 rounded-lg mb-2">
-                <Image
-                  src={firstSite.logo || "/placeholder.svg"}
-                  alt={firstSite.siteName}
-                  width={100}
-                  height={50}
-                  className="object-contain"
-                />
+            {/* Desktop Layout */}
+            <div className="hidden md:block">
+              {/* Special Offer Badge */}
+              <div className="absolute left-0 top-1/2 transform -translate-y-1/2">
+                <div className="bg-blue-600 text-white px-3 py-8 text-sm font-bold writing-mode-vertical">
+                  Special Offer
+                </div>
               </div>
-              <div className="flex justify-center">
+
+              {/* Site name at top */}
+              <div className="text-center mb-4">
+                <div className="inline-block bg-white px-6 py-2 rounded-lg">
+                  <div className="text-black text-xl font-bold">{firstSite.siteName}</div>
+                </div>
+              </div>
+
+              <div className="flex justify-between items-center">
+                <div className="flex-1">
+                  {/* Bonus with blue background */}
+                  <div className="bg-blue-600 text-white p-3 rounded-lg mb-4 text-center">
+                    <div className="text-xl font-bold">{firstSite.bonus}</div>
+                  </div>
+
+                  {/* CTA Button */}
+                  <div className="flex justify-center">
+                    <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-lg flex items-center space-x-2">
+                      <span>➤</span>
+                      <span>Claim Bonus</span>
+                    </button>
+                  </div>
+                </div>
+
+                {/* Right side branding */}
+                <div className="ml-6">
+                  <div className="bg-white p-4 rounded-lg mb-2">
+                    <Image
+                      src={firstSite.logo || "/placeholder.svg"}
+                      alt={firstSite.siteName}
+                      width={120}
+                      height={60}
+                      className="object-contain"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Disclaimer */}
+              <div className="text-xs text-white text-center mt-4">{firstSite.disclaimer}</div>
+
+              {/* Indicator dots */}
+              <div className="flex justify-center mt-3">
                 {[...Array(5)].map((_, i) => (
                   <div key={i} className="w-2 h-2 rounded-full bg-green-500 mx-0.5"></div>
                 ))}
