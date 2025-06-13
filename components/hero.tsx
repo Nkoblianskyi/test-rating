@@ -1,35 +1,45 @@
 "use client"
 
 export function Hero() {
-  const scrollToRankings = () => {
-    document.getElementById("rankings")?.scrollIntoView({ behavior: "smooth" })
-  }
-
   return (
-    <section className="bg-gradient-to-r from-[#003B2F] to-[#004d3d] text-white py-8 md:py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 className="text-3xl md:text-4xl font-bold mb-4 animate-fade-in">Best Irish Betting Sites — 2025 Edition</h1>
-        <p className="text-lg md:text-xl mb-6 text-gray-200 max-w-2xl mx-auto">
-          Compare trusted, fully licensed Irish bookmakers and claim top bonuses today!
+    <section className="relative py-2 mb-4">
+      {/* Dark overlay with fixed height */}
+      <div className="absolute inset-0 bg-black bg-opacity-70"></div>
+
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white  rounded-lg py-2">
+        <h1 className="text-xl md:text-2xl font-bold mb-1">
+          BEST <span className="text-green-500">IRELAND</span> BETTING SITES
+        </h1>
+        <h2 className="text-base md:text-lg font-bold mb-1 text-gray-200">UPDATED FOR JUNE 2025</h2>
+
+        <p className="text-xs md:text-sm mb-1 max-w-4xl mx-auto">
+          Finding betting sites can be hard if you don't know where to look. Starting with the most suitable new
+          customer offers for June.
         </p>
 
-        {/* Stats and badges */}
-        <div className="flex flex-wrap justify-center gap-4 mt-6">
-          <div className="bg-black bg-opacity-30 px-4 py-2 rounded-lg">
-            <div className="text-[#FFD700] font-bold">Last Updated</div>
-            <div className="text-white">June 12, 2025</div>
-          </div>
+        <p className="text-xs mb-1 text-gray-300 max-w-4xl mx-auto">*New Customers Only. Age 18+ | T&Cs Apply</p>
 
-          <div className="bg-black bg-opacity-30 px-4 py-2 rounded-lg">
-            <div className="text-[#FFD700] font-bold">Monthly Reviews</div>
-            <div className="text-white">42 Sites Analyzed</div>
+        {/* Trust badges - more compact */}
+        <div className="flex justify-center gap-2 mb-1">
+          <div className="flex items-center space-x-1">
+            <div className="w-5 h-5 bg-green-600 rounded-full flex items-center justify-center">
+              <span className="text-white text-xs">✓</span>
+            </div>
+            <span className="text-white text-xs font-semibold">100% Legal</span>
           </div>
-
-          <div className="bg-black bg-opacity-30 px-4 py-2 rounded-lg">
-            <div className="text-[#FFD700] font-bold">Exclusive Offers</div>
-            <div className="text-white">8 New Bonuses</div>
+          <div className="flex items-center space-x-1">
+            <span className="text-sm">🇮🇪</span>
+            <span className="text-white text-xs font-semibold">IE Regulated</span>
+          </div>
+          <div className="flex items-center space-x-1">
+            <div className="w-5 h-5 bg-green-600 rounded-full flex items-center justify-center">
+              <span className="text-white text-xs">💰</span>
+            </div>
+            <span className="text-white text-xs font-semibold">Fast Withdrawals</span>
           </div>
         </div>
+
+        <p className="text-xs text-gray-400">Play responsibly; Wagering and T&Cs apply.</p>
       </div>
     </section>
   )

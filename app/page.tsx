@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, type ReactNode } from "react"
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
 import { Sidebar } from "@/components/sidebar"
@@ -24,15 +24,14 @@ export default function HomePage() {
   }, [])
 
   const renderRankingsList = () => {
-    const items = []
-    const firstSite = bettingSites[0]
+    const items: ReactNode[] = []
 
     bettingSites.forEach((site, index) => {
       // Add normal card
       items.push(<BettingCard key={site.id} site={site} rank={index + 1} />)
 
-      // Add special block every 4th position using first site data
-      if ((index + 1) % 4 === 0) {
+      // Add special block every 3rd position using first site data
+      if ((index + 1) % 3 === 0) {
         items.push(<TopRecommendationBlock key={`special-${index}`} />)
       }
     })
@@ -41,36 +40,33 @@ export default function HomePage() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div
+      className="min-h-screen bg-cover bg-fixed bg-center"
+      style={{
+        backgroundImage: "url('/bg-2.jpg')",
+      }}
+    >
       <Header />
       <Hero />
 
-      {/* Main Content with Background Image */}
-      <div
-        className="py-6 bg-cover bg-center bg-fixed"
-        style={{
-          backgroundImage: "url('/bg.jpg')",
-        }}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-opacity-95 py-8 rounded-lg shadow-lg bg-transparent">
-          <div className="lg:grid lg:grid-cols-4 lg:gap-8">
-            {/* Mobile Sidebar - appears after hero on mobile */}
-            <div className="lg:hidden mb-8">
-              <Sidebar />
-            </div>
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="lg:grid lg:grid-cols-4 lg:gap-8">
+          {/* Mobile Sidebar - appears after hero on mobile */}
+          <div className="lg:hidden mb-8">
+            <Sidebar />
+          </div>
 
-            {/* Main Content */}
-            <div className="lg:col-span-3">
-              <div id="rankings" className="space-y-6">
-                {/* <h2 className="text-3xl font-bold text-[#003B2F] mb-8">Top Irish Betting Sites Rankings 2025</h2> */}
-                {renderRankingsList()}
-              </div>
+          {/* Main Content */}
+          <div className="lg:col-span-3">
+            <div id="rankings" className="space-y-6">
+              {renderRankingsList()}
             </div>
+          </div>
 
-            {/* Desktop Sidebar */}
-            <div className="hidden lg:block lg:col-span-1">
-              <Sidebar />
-            </div>
+          {/* Desktop Sidebar */}
+          <div className="hidden lg:block lg:col-span-1">
+            <Sidebar />
           </div>
         </div>
       </div>

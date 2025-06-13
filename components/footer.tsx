@@ -10,13 +10,13 @@ export function Footer() {
   ]
 
   const organizations = [
-    { name: "GambleAware", logo: "/placeholder.svg?height=40&width=80&text=GambleAware" },
-    { name: "GamCare", logo: "/placeholder.svg?height=40&width=80&text=GamCare" },
-    { name: "EGBA", logo: "/placeholder.svg?height=40&width=80&text=EGBA" },
+    { name: "GambleAware", logo: "/gamble.webp" },
+    { name: "GamCare", logo: "/gamecare.svg" },
+    { name: "EGBA", logo: "/egba.png" },
   ]
 
   return (
-    <footer className="bg-[#121212] text-white py-12">
+    <footer className="bg-black bg-opacity-80 text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Logo and Description */}
@@ -52,7 +52,7 @@ export function Footer() {
                   alt={org.name}
                   width={80}
                   height={40}
-                  className="object-contain opacity-70 hover:opacity-100 transition-opacity"
+                  className="object-contain opacity-70 hover:opacity-100 transition-opacity bg-white p-2 rounded"
                 />
               ))}
             </div>
