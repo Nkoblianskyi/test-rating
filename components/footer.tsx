@@ -1,18 +1,31 @@
 import Image from "next/image"
+import Link from "next/link"
 
 export function Footer() {
   const footerLinks = [
-    { name: "Home", href: "#" },
+    { name: "Home", href: "/" },
     { name: "Betting Guide", href: "#" },
     { name: "Responsible Gambling", href: "#" },
-    { name: "Cookie Policy", href: "#" },
-    { name: "Privacy Policy", href: "#" },
+    { name: "Cookie Policy", href: "/cookie-policy" },
+    { name: "Privacy Policy", href: "/privacy-policy" },
   ]
 
   const organizations = [
-    { name: "GambleAware", logo: "/gamble.webp" },
-    { name: "GamCare", logo: "/gamecare.svg" },
-    { name: "EGBA", logo: "/egba.png" },
+    {
+      name: "GambleAware",
+      logo: "/gamble.webp",
+      url: "https://www.gambleaware.org",
+    },
+    {
+      name: "GamCare",
+      logo: "/gamecare.svg",
+      url: "https://www.gamcare.org.uk",
+    },
+    {
+      name: "EGBA",
+      logo: "/egba.png",
+      url: "https://www.egba.eu",
+    },
   ]
 
   return (
@@ -33,9 +46,9 @@ export function Footer() {
             <ul className="space-y-2">
               {footerLinks.map((link, index) => (
                 <li key={index}>
-                  <a href={link.href} className="text-gray-400 hover:text-white transition-colors">
+                  <Link href={link.href} className="text-gray-400 hover:text-white transition-colors">
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -46,14 +59,22 @@ export function Footer() {
             <h3 className="text-lg font-semibold mb-4">Trusted Partners</h3>
             <div className="flex space-x-4">
               {organizations.map((org, index) => (
-                <Image
+                <a
                   key={index}
-                  src={org.logo || "/placeholder.svg"}
-                  alt={org.name}
-                  width={80}
-                  height={40}
-                  className="object-contain opacity-70 hover:opacity-100 transition-opacity bg-white p-2 rounded"
-                />
+                  href={org.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={`Visit ${org.name}`}
+                  className="hover:opacity-100 transition-opacity"
+                >
+                  <Image
+                    src={org.logo || "/placeholder.svg"}
+                    alt={org.name}
+                    width={80}
+                    height={40}
+                    className="object-contain opacity-70 hover:opacity-100 transition-opacity bg-white p-2 rounded"
+                  />
+                </a>
               ))}
             </div>
           </div>
