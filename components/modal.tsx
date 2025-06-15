@@ -25,14 +25,14 @@ export function Modal({ isOpen, onClose }: ModalProps) {
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 bg-gray-800 bg-opacity-90 flex items-center justify-center z-50 p-4">
-      <div className="relative max-w-6xl w-full">
+    <div className="fixed inset-0 bg-gray-800 bg-opacity-90 flex items-center justify-center z-50 p-6">
+      <div className="relative max-w-4xl w-full">
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute -top-8 -right-8 z-10 text-white hover:text-gray-300 transition-colors"
+          className="absolute -top-4 right-2 z-10 text-white hover:text-gray-300 transition-colors"
         >
-          <X size={32} />
+          <X size={28} />
         </button>
 
         {/* Title */}
@@ -172,9 +172,8 @@ export function Modal({ isOpen, onClose }: ModalProps) {
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
-                className={`w-3 h-3 rounded-full transition-colors ${
-                  index === currentSlide ? "bg-white" : "bg-gray-500"
-                }`}
+                className={`w-3 h-3 rounded-full transition-colors ${index === currentSlide ? "bg-white" : "bg-gray-500"
+                  }`}
               />
             ))}
           </div>

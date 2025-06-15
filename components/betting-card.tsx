@@ -64,7 +64,7 @@ export function BettingCard({ site, rank }: BettingCardProps) {
         >
           <div className="p-3 relative">
             {/* Badge */}
-            <div className="absolute top-0 left-0 -mt-1 -ml-1">
+            <div className="absolute top-0 left-0">
               <div className={`${badge.color} text-white px-2 py-0.5 text-xs font-bold rounded-full`}>{badge.text}</div>
             </div>
 
@@ -113,22 +113,30 @@ export function BettingCard({ site, rank }: BettingCardProps) {
             <div className="hidden md:grid md:grid-cols-5 gap-2 items-center pt-2">
               {/* Logo */}
               <div className="text-center">
-                <div className="flex justify-center">
+                <div className="flex justify-center mb-1">
                   <Image
                     src={site.logo || "/placeholder.svg"}
                     alt={site.siteName}
-                    width={80}
-                    height={40}
+                    width={160}
+                    height={80}
                     className="object-contain"
                   />
                 </div>
+                <div className="text-xs font-semibold text-gray-700">{site.siteName}</div>
               </div>
 
               {/* Bonus Offer */}
               <div className="text-center md:col-span-2">
-                <div className="text-xs text-gray-500 uppercase tracking-wide">WELCOME BONUS</div>
-                <div className="text-base font-bold text-black">{bonusData.main}</div>
-                {bonusData.secondary && <div className="text-sm font-semibold text-black">{bonusData.secondary}</div>}
+                <div className="text-xs text-gray-500 uppercase tracking-wide mb-1">WELCOME BONUS</div>
+                <div className="bg-gradient-to-r from-blue-50 to-green-50 border border-blue-200 rounded-lg p-2 mb-1">
+                  <div className="text-base font-bold text-blue-800">{bonusData.main}</div>
+                  {bonusData.secondary && (
+                    <div className="text-sm font-semibold text-green-700">{bonusData.secondary}</div>
+                  )}
+                </div>
+                <div className="inline-block bg-yellow-100 text-yellow-800 px-2 py-0.5 rounded-full text-xs font-bold">
+                  🎁 FREE BONUS
+                </div>
               </div>
 
               {/* User Rating */}

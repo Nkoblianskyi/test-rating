@@ -11,7 +11,7 @@ export function TopRecommendationBlock() {
         <div
           className="relative bg-cover bg-center rounded-lg overflow-hidden border-2 border-dashed border-white"
           style={{
-            backgroundImage: "url('/bg-2.jpg')",
+            backgroundImage: "url('/placeholder.svg?height=300&width=800&text=Gaming+Background')",
           }}
         >
           {/* Dark overlay */}
@@ -35,13 +35,17 @@ export function TopRecommendationBlock() {
               </div>
 
               {/* Site name */}
-              <div className="text-center mb-3">
-                <div className="text-white text-lg font-bold">{firstSite.siteName}</div>
+              <div className="flex justify-center mb-3">
+                <div className="bg-white px-4 py-2 rounded-lg">
+                  <div className="text-black text-lg font-bold">{firstSite.siteName}</div>
+                </div>
               </div>
 
               {/* Bonus */}
-              <div className="bg-blue-600 text-white p-2 rounded-lg mb-3 text-center">
-                <div className="text-base font-bold">{firstSite.bonus}</div>
+              <div className="flex justify-center mb-3">
+                <div className="bg-blue-600 text-white p-2 rounded-lg">
+                  <div className="text-base font-bold">{firstSite.bonus}</div>
+                </div>
               </div>
 
               {/* CTA Button */}
@@ -74,11 +78,17 @@ export function TopRecommendationBlock() {
 
                 <div className="flex-1">
                   {/* Site name */}
-                  <div className="text-white text-lg font-bold mb-2 text-center sm:text-left">{firstSite.siteName}</div>
+                  <div className="flex justify-center sm:justify-start mb-2">
+                    <div className="bg-white px-3 py-1 rounded-lg">
+                      <div className="text-black text-lg font-bold">{firstSite.siteName}</div>
+                    </div>
+                  </div>
 
                   {/* Bonus */}
-                  <div className="bg-blue-600 text-white p-2 rounded-lg mb-2 text-center sm:text-left">
-                    <div className="text-base font-bold">{firstSite.bonus}</div>
+                  <div className="flex justify-center sm:justify-start mb-2">
+                    <div className="bg-blue-600 text-white p-2 rounded-lg">
+                      <div className="text-base font-bold">{firstSite.bonus}</div>
+                    </div>
                   </div>
 
                   {/* CTA Button */}
@@ -105,30 +115,28 @@ export function TopRecommendationBlock() {
               </div>
 
               {/* Site name at top */}
-              <div className="text-center mb-3 ml-6">
-                <div className="inline-block bg-white px-4 py-1 rounded-lg">
+              <div className="flex justify-center mb-3 ml-6">
+                <div className="bg-white px-4 py-1 rounded-lg">
                   <div className="text-black text-lg font-bold">{firstSite.siteName}</div>
                 </div>
               </div>
 
-              <div className="flex justify-between items-center ml-6">
-                <div className="flex-1">
-                  {/* Bonus with blue background */}
-                  <div className="bg-blue-600 text-white p-2 rounded-lg mb-3 text-center">
-                    <div className="text-base font-bold">{firstSite.bonus}</div>
+              <div className="ml-6">
+                <div className="flex flex-col items-center space-y-3">
+                  {/* Bonus */}
+                  <div className="bg-blue-600 text-white p-2 rounded-lg">
+                    <div className="text-base font-bold text-center">{firstSite.bonus}</div>
                   </div>
 
                   {/* CTA Button */}
-                  <div className="flex justify-center">
-                    <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-1.5 px-4 rounded-lg flex items-center space-x-1 text-sm">
-                      <span>➤</span>
-                      <span>Claim Bonus</span>
-                    </button>
-                  </div>
+                  <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-1.5 px-4 rounded-lg flex items-center space-x-1 text-sm">
+                    <span>➤</span>
+                    <span>Claim Bonus</span>
+                  </button>
                 </div>
 
-                {/* Right side branding */}
-                <div className="ml-4">
+                {/* Logo positioned separately to the right */}
+                <div className="absolute right-6 top-1/2 transform -translate-y-1/2">
                   <div className="bg-white p-2 rounded-lg">
                     <Image
                       src={firstSite.logo || "/placeholder.svg"}
@@ -155,31 +163,29 @@ export function TopRecommendationBlock() {
               </div>
 
               {/* Site name at top */}
-              <div className="text-center mb-4 ml-8">
-                <div className="inline-block bg-white px-6 py-2 rounded-lg">
+              <div className="flex justify-center mb-4 ml-8">
+                <div className="bg-white px-6 py-2 rounded-lg">
                   <div className="text-black text-xl font-bold">{firstSite.siteName}</div>
                 </div>
               </div>
 
-              <div className="flex justify-between items-center ml-8">
-                <div className="flex-1">
-                  {/* Bonus with blue background */}
-                  <div className="bg-blue-600 text-white p-3 rounded-lg mb-4 text-center">
-                    <div className="text-xl font-bold">{firstSite.bonus}</div>
+              <div className="ml-8">
+                <div className="flex flex-col items-center space-y-4">
+                  {/* Bonus */}
+                  <div className="bg-blue-600 text-white p-3 rounded-lg">
+                    <div className="text-xl font-bold text-center">{firstSite.bonus}</div>
                   </div>
 
                   {/* CTA Button */}
-                  <div className="flex justify-center">
-                    <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-lg flex items-center space-x-2">
-                      <span>➤</span>
-                      <span>Claim Bonus</span>
-                    </button>
-                  </div>
+                  <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-lg flex items-center space-x-2">
+                    <span>➤</span>
+                    <span>Claim Bonus</span>
+                  </button>
                 </div>
 
-                {/* Right side branding */}
-                <div className="ml-6">
-                  <div className="bg-white p-4 rounded-lg mb-2">
+                {/* Logo positioned separately to the right */}
+                <div className="absolute right-8 top-1/2 transform -translate-y-1/2">
+                  <div className="bg-white p-4 rounded-lg">
                     <Image
                       src={firstSite.logo || "/placeholder.svg"}
                       alt={firstSite.siteName}
