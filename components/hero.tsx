@@ -6,7 +6,7 @@ export function Hero() {
       {/* Dark overlay with fixed height */}
       <div className="absolute inset-0 bg-black bg-opacity-70"></div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white  rounded-lg py-2">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white rounded-lg py-2">
         <h1 className="text-xl md:text-2xl font-bold mb-1">
           BEST <span className="text-green-500">IRELAND</span> BETTING SITES
         </h1>
@@ -37,6 +37,22 @@ export function Hero() {
             </div>
             <span className="text-white text-xs font-semibold">Fast Withdrawals</span>
           </div>
+        </div>
+
+        {/* Navigation Buttons */}
+        <div className="flex justify-center gap-4 mb-2">
+          <button
+            onClick={() => document.getElementById("betting-rankings")?.scrollIntoView({ behavior: "smooth" })}
+            className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-lg transition-colors duration-300"
+          >
+            🏈 Top Betting
+          </button>
+          <button
+            onClick={() => document.getElementById("casino-rankings")?.scrollIntoView({ behavior: "smooth" })}
+            className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-6 rounded-lg transition-colors duration-300"
+          >
+            🎰 Top Casino
+          </button>
         </div>
 
         <p className="text-xs text-gray-400">Play responsibly; Wagering and T&Cs apply.</p>

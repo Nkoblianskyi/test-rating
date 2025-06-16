@@ -11,6 +11,7 @@ import { SafeGambling } from "@/components/safe-gambling"
 import { Footer } from "@/components/footer"
 import { Modal } from "@/components/modal"
 import { bettingSites } from "@/data/mock-data"
+import { CasinoSection } from "@/components/casino-section"
 
 export default function HomePage() {
   const [showModal, setShowModal] = useState(false)
@@ -43,7 +44,7 @@ export default function HomePage() {
     <div
       className="min-h-screen bg-cover bg-fixed bg-center"
       style={{
-        backgroundImage: "url('/bg-2.jpg')",
+        backgroundImage: "url('/bg.jpg')",
       }}
     >
       <Header />
@@ -59,7 +60,7 @@ export default function HomePage() {
 
           {/* Main Content */}
           <div className="lg:col-span-3">
-            <div id="rankings" className="space-y-6">
+            <div id="betting-rankings" className="space-y-6">
               {renderRankingsList()}
             </div>
           </div>
@@ -70,7 +71,7 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-
+      <CasinoSection />
       <TextSections />
       <SafeGambling />
       <Footer />
