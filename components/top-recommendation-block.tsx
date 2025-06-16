@@ -11,7 +11,7 @@ export function TopRecommendationBlock() {
         <div
           className="relative bg-cover bg-center rounded-lg overflow-hidden border-2 border-dashed border-white"
           style={{
-            backgroundImage: "url('/placeholder.svg?height=300&width=800&text=Gaming+Background')",
+            backgroundImage: "url('/bg-2.jpg')",
           }}
         >
           {/* Dark overlay */}
